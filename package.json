@@ -7,7 +7,7 @@
     "build": "webpack --mode production",
     "lint": "eslint ./src/ --ext=js",
     "lint-fix": "eslint ./src/ --ext=js --fix",
-    "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook": "start-storybook -p 6006",
     "start": "webpack-dev-server --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
