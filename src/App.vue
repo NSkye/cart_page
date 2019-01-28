@@ -1,10 +1,16 @@
 <template>
-  <div class="main"></div>
+  <div class="main">
+    <Header />
+  </div>
 </template>
 
 <script>
-export default {
+import Header from '@@/Header'
 
+export default {
+  components: {
+    Header
+  }
 }
 </script>
 
