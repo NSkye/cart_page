@@ -1,62 +1,50 @@
-const path = require('path');
+'use strict'
+
+const path = require('path')
 
 module.exports = {
   module: {
     rules: [
       {
-        test: /\.vue$/,
-        use: 'vue-loader',
+        test: /\.css$/,
+        use: ['vue-style-loader', 'css-loader', 'postcss-loader']
+      },
+      {
+        test: /\.styl(us)?$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'postcss-loader',
+          'stylus-loader'
+        ]
       },
       {
         test: /\.html$/,
-        use: [
-          'html-loader',
-        ],
+        use: [{
+          loader: 'html-loader'
+        }]
       },
       {
-        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          name: 'static/media/[name].[hash:8].[ext]',
-        },
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-        {
-          loader: 'css-loader',
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'file-loader',
           options: {
-            importLoaders: 1,
-          },
-        }],
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+          }
+        }]
       },
       {
-        test: /\.(svg|woff|woff2|ttf)$/,
-        use: ['file-loader']
-      },
-      {
-        test: /\.styl$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              localIdentName: '[name]__[local]___[hash:base64:5]',
-            }
-          },
-          'stylus-loader',
-        ],
-      },
-    ],
+        test: /\.(gif|bmp|jpg|jpeg|svg|png)$/,
+        use: [ 'file-loader' ]
+      }
+    ]
   },
   resolve: {
     extensions: ['.js', '.vue'],
     alias: {
       '@': path.resolve(__dirname, '../src'),
       '@@': path.resolve(__dirname, '../src/components'),
-    },
+    }
   },
-};
+}
