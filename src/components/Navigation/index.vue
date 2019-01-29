@@ -38,7 +38,8 @@ export default {
     height auto
     display flex
     flex-wrap wrap
-    justify-content center
+    justify-content space-between
+    width 100%
   &__item
     margin 0
   &__link
@@ -50,6 +51,10 @@ export default {
     line-height 2em
     padding 0 1.3em
     transition color .1s
+    @media screen and (max-width 480px)
+      font-weight normal
+      font-size 3.6vw
+      padding 0
     &:hover
       color $line-accent
 </style>
