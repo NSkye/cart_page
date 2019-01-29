@@ -14,6 +14,7 @@
   cursor pointer
   text-decoration none
   font-weight bold
+  font-size 1.4em
   line-height 2em
   display flex
   align-items center

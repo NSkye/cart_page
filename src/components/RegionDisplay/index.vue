@@ -28,20 +28,23 @@ export default {
   transition color .1s
   cursor pointer
   display flex
-  align-items center
+  align-items flex-end
   line-height 2em
   &:hover
     color $line-accent
   &__label
     margin-right .5em
+    font-size 1.4em
   &__name
     font-weight 600
     color $line-accent
+    font-size 1.4em
   &__icon-left
-    font-size .75em
+    font-size 1em
     padding-right .4em
+    align-self center
   &__icon-right
-    font-size .55em
+    font-size .8em
     padding-left .4em
-    transform translateY(5%)
+    align-self center
 </style>

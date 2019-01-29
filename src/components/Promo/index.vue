@@ -13,6 +13,7 @@
   transition color .1s
   cursor pointer
   text-decoration none
+  font-size 1.4em
   font-weight bold
   line-height 2em
   display flex

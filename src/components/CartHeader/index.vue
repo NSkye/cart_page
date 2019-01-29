@@ -25,20 +25,22 @@ export default {
   display inline-block
   color $line-light
   font-weight 600
+  &__label
+    font-size 1.4em
   &__graphic
     display inline-block
     position relative
     height 100%
     width auto
-    font-size 1.5em
     color $line-accent
     margin-right .1em
+  &__icon
+    font-size 2.4em
   &__badge
     position absolute
     top 0
-    right -.25em
-    transform translate(10%, 10%)
-    font-size .45em
+    font-size 1.1em
+    right -.2em
     border-radius 45%
     font-weight bold
     padding 0 .5em

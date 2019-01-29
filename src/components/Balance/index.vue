@@ -33,22 +33,22 @@ export default {
   color $line-light
   transition color .1s
   cursor pointer
+  height 2.2em
   display flex
-  align-items center
-  line-height 2em
+  align-items flex-end
   &:hover
     color $line-accent
   &__label
-    font-size .9em
+    font-size 1.3em
     font-weight 600
-    margin-right .5em
+    margin-right .4em
   &__amount
     font-weight bold
     color $line-accent
-    font-size 1.05em
+    font-size 1.6em
   &__icon
     color $line-accent
-    font-size .55em
+    font-size .8em
     padding-left .4em
-    transform translateY(5%)
+    align-self center
 </style>
