@@ -19,7 +19,7 @@
   cursor pointer
   height 2.2em
   display flex
-  align-items flex-end
+  align-items center
   &:hover
     color $line-accent
   &__label
