@@ -5,7 +5,7 @@ import { withKnobs, text } from '@storybook/addon-knobs'
 
 Vue.component('region-display', RegionDisplay)
 
-const stories = storiesOf('RegionDisplay', module);
+const stories = storiesOf('RegionDisplay', module)
 stories.addDecorator(withKnobs)
 
 stories
@@ -18,7 +18,4 @@ stories
       }
     },
     template: '<RegionDisplay :selected-region-name="regionName" />'
-  }));
-
-//storiesOf('RegionDisplay', module)
-//  .add('component', () => '<div><region-display/></div>')
+  }))

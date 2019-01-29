@@ -5,7 +5,7 @@ import { withKnobs, number } from '@storybook/addon-knobs'
 
 Vue.component('balance', Balance)
 
-const stories = storiesOf('Balance', module);
+const stories = storiesOf('Balance', module)
 stories.addDecorator(withKnobs)
 
 stories
@@ -23,4 +23,4 @@ stories
       }
     },
     template: '<Balance :amount="amount" />'
-  }));
+  }))

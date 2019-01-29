@@ -5,8 +5,8 @@ import { withKnobs, number } from '@storybook/addon-knobs'
 
 Vue.component('header-cart', CartHeader)
 
-const stories = storiesOf('CartHeader', module);
-stories.addDecorator(withKnobs);
+const stories = storiesOf('CartHeader', module)
+stories.addDecorator(withKnobs)
 
 stories
   .add('with knobs', () => ({
@@ -18,9 +18,9 @@ stories
           range: true,
           min: 0,
           max: 99,
-          step: 1,
+          step: 1
         })
       }
     },
     template: '<CartHeader :item-count="count" />'
-  }));
+  }))
