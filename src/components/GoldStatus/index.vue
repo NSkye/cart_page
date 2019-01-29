@@ -1,7 +1,8 @@
 <template>
   <a class='gold-status' href='#'>
     <i class='icon-crown gold-status__icon'/>
-    GOLD статус - Выберите ПОДАРОК!
+    <span class='gold-status__minimal'>GOLD статус</span>
+    <span class='gold-status__full'>&nbsp;- Выберите ПОДАРОК!</span>
   </a>
 </template>
 
@@ -25,6 +26,7 @@
     color $line-special-2
     font-size .9em
     padding-right .4em
+  @media screen and (max-width 990px)
+    &__full
+      display none
 </style>
-
-

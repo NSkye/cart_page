@@ -1,7 +1,7 @@
 <template>
   <a href='#' class='cart-header'>
     <div class='cart-header__graphic'>
-      <i class='icon-cart cart-header__icon' />
+      <i class='icon-cart cart-header__icon' role='img' aria-label='Корзина' />
       <span class='cart-header__badge' v-show="itemCount">{{ itemCount }}</span>
     </div>
     <span class='cart-header__label'>Корзина</span>
@@ -16,7 +16,6 @@ export default {
 }
 </script>
 
-
 <style lang="stylus" scoped>
 @import '~@/vars'
 
@@ -27,6 +26,8 @@ export default {
   font-weight 600
   &__label
     font-size 1.4em
+    @media screen and (max-width 990px)
+      display none
   &__graphic
     display inline-block
     position relative

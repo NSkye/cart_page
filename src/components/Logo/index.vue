@@ -9,13 +9,13 @@
   </a>
 </template>
 
-
 <style lang="stylus" scoped>
 .logo
   display block
   max-width 17em
   height 3.22em
   position relative
+  width 100%
   &__svg
     position absolute
     bottom 0
@@ -24,10 +24,9 @@
 @media screen and (max-width 990px)
   .logo
     overflow hidden
-    width 3.25em
+    max-width 3.25em
     &__svg
       transform translateY(.65em)
     &__text
       display none
 </style>
-

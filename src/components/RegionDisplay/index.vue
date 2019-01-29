@@ -18,6 +18,7 @@ export default {
     }
   }
 }
+
 </script>
 
 <style lang="stylus" scoped>
@@ -35,6 +36,8 @@ export default {
   &__label
     margin-right .5em
     font-size 1.4em
+    @media screen and (max-width 990px)
+      display none
   &__name
     font-weight 600
     color $line-accent

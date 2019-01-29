@@ -16,12 +16,13 @@ const navItems = [
 ]
 
 export default {
-  data() {
+  data () {
     return {
       navItems
     }
   }
 }
+
 </script>
 
 <style lang="stylus" scoped>
@@ -36,6 +37,8 @@ export default {
     padding 0
     height auto
     display flex
+    flex-wrap wrap
+    justify-content center
   &__item
     margin 0
   &__link
@@ -50,5 +53,3 @@ export default {
     &:hover
       color $line-accent
 </style>
-
-

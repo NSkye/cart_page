@@ -2,29 +2,13 @@
   <span class='balance'>
     <span class='balance__label'>Ваш счет</span>
     <span class='balance__amount'>
-      {{ formatBalance(amount) }} <span role='img' aria-label='рубль'>₽</span>
+      {{ formattedAmount }} <span role='img' aria-label='рубль'>₽</span>
     </span>
     <i class='icon-dropdown balance__icon' />
   </span>
 </template>
 
-<script>
-const formatBalance = amount => amount <= 0 ? '0' : String(amount)
-  .split('')
-  .reverse()
-  .map((v, i) => !(i%3) ? v + ' ' : v)
-  .reverse()
-  .join('')
-
-export default {
-  props: {
-    amount: Number,
-  },
-  methods: {
-    formatBalance
-  }
-}
-</script>
+<script src='./main'></script>
 
 <style lang="stylus" scoped>
 @import '~@/vars'
@@ -42,6 +26,8 @@ export default {
     font-size 1.3em
     font-weight 600
     margin-right .4em
+    @media screen and (max-width 990px)
+      display none
   &__amount
     font-weight bold
     color $line-accent
