@@ -10,6 +10,8 @@
 </template>
 
 <style lang="stylus" scoped>
+@import '~@/vars'
+
 .logo
   display block
   max-width 17em
@@ -21,7 +23,7 @@
     bottom 0
     left 0
 
-@media screen and (max-width 990px)
+@media screen and (max-width $break-tablet)
   .logo
     overflow hidden
     max-width 3.25em

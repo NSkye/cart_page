@@ -36,7 +36,7 @@ export default {
   &__label
     margin-right .5em
     font-size 1.4em
-    @media screen and (max-width 990px)
+    @media screen and (max-width $break-tablet)
       display none
   &__name
     font-weight 600

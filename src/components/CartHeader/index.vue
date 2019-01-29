@@ -26,7 +26,7 @@ export default {
   font-weight 600
   &__label
     font-size 1.4em
-    @media screen and (max-width 990px)
+    @media screen and (max-width $break-tablet)
       display none
   &__graphic
     display inline-block

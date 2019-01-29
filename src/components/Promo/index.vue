@@ -29,12 +29,12 @@
     padding-right .8em
   &__full
     text-transform capitalize
-  @media screen and (max-width 990px)
+  @media screen and (max-width $break-tablet)
     &__full
       display none
     &__minimal
       text-transform capitalize
-  @media screen and (max-width 960px)
+  @media screen and (max-width $break-tablet-small)
     &__half
       display none
 </style>

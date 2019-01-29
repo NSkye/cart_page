@@ -42,7 +42,7 @@
     align-items center
     height 2.4em
     margin-bottom 3em
-    @media screen and (max-width 660px)
+    @media screen and (max-width $break-phone)
       justify-content space-between
   &__secondary-row-item
     margin-right 3em
@@ -51,7 +51,7 @@
     &:last-child
       margin-right 0
     &, &:first-child
-      @media screen and (max-width 660px)
+      @media screen and (max-width $break-phone)
         margin 0
   &__main-row
     display flex
@@ -60,7 +60,7 @@
     align-items center
   &__main-row-item
     &:nth-child(2)
-      @media screen and (max-width 660px)
+      @media screen and (max-width $break-phone)
         width 100%
         order 100
         display flex

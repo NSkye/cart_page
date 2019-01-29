@@ -51,7 +51,7 @@ export default {
     line-height 2em
     padding 0 1.3em
     transition color .1s
-    @media screen and (max-width 480px)
+    @media screen and (max-width $break-phone-small)
       font-weight normal
       font-size 3.6vw
       padding 0

@@ -26,7 +26,7 @@
     font-size 1.3em
     font-weight 600
     margin-right .4em
-    @media screen and (max-width 990px)
+    @media screen and (max-width $break-tablet)
       display none
   &__amount
     font-weight bold

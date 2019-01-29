@@ -26,7 +26,7 @@
     color $line-special-2
     font-size .9em
     padding-right .4em
-  @media screen and (max-width 990px)
+  @media screen and (max-width $break-tablet)
     &__full
       display none
 </style>
