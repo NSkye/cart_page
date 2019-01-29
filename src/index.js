@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from '@/App'
 import 'normalize.css'
 import '@/fonts/open-sans/stylesheet.css'
+import '@/fonts/icons/stylesheet.css'
 
 // eslint-disable-next-line
 new Vue({

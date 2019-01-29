@@ -1,4 +1,7 @@
 import { configure } from '@storybook/vue';
+import '@/fonts/open-sans/stylesheet.css';
+import '@/fonts/icons/stylesheet.css';
+import './styles.css';
 
 import Vue from 'vue';
 import Vuex from 'vuex';
