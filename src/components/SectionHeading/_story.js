@@ -26,7 +26,7 @@ stories
         default: select('control-type', {
           regular: 'regular',
           accent: 'accent',
-          danger: 'danger',
+          danger: 'danger'
         }, 'regular')
       }
     },
