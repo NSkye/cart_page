@@ -16,4 +16,5 @@ export default {
 <style lang="stylus" scoped>
 .color-display
   font-size 2em
+  transform translateX(-15%)
 </style>

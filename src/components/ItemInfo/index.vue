@@ -1,8 +1,8 @@
 <template>
   <span class='item-info'>
     <span v-if='title' class='item-info__title'>{{ title }}</span>
-    <InfoBadge v-if='type==="text"' :text='data' />
-    <ColorDisplay v-if='type==="color"' :color='data' />
+    <InfoBadge v-if='type==="text"' class='item-info__icon' :text='data' />
+    <ColorDisplay v-if='type==="color"' class='item-info__icon' :color='data' />
   </span>
 </template>
 
@@ -36,9 +36,14 @@ export default {
 @import '~@/vars'
 
 .item-info
+  max-height 2rem
+  display flex
+  align-items center
   &__title
-    line-height 3em
     font-size 1.5em
     color $line-light
-    margin-right 1em
+    margin-right .8em
+  &__icon
+    height 100%
+    margin-right 1.1em
 </style>
