@@ -101,6 +101,7 @@
       color $line-danger
   &__main
     display flex
+    flex-wrap wrap
   &__info
     flex-grow 1
     position relative
@@ -120,6 +121,6 @@
     flex-direction column
     justify-content center
     align-items flex-end
-  &__full-price, &__avaliable-discount
-    margin-bottom .8em
+  &__full-price, &__avaliable-discount, &__minimal-discount
+    margin-top .8em
 </style>

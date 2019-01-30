@@ -30,7 +30,7 @@ stories
       },
       color: {
         type: String,
-        default: text('color', 'red')
+        default: text('color', 'grey')
       },
       size: {
         type: String,
