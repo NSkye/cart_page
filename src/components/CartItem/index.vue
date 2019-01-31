@@ -39,7 +39,7 @@
           title='Полная цена'
           type='intermediate'
           color='regular'
-          :value='fullPrice'
+          :value='fullPrice * (quantity || 1)'
         />
         <PriceDisplay
           v-if='avaliableDiscount'
@@ -47,7 +47,7 @@
           title='Можно оплатить с личного счета'
           type='intermediate'
           color='accent'
-          :value='avaliableDiscount'
+          :value='avaliableDiscount * (quantity || 1)'
         />
         <PriceDisplay
           v-if='minimalDiscount'
@@ -55,7 +55,7 @@
           title='Минимально к оплате с личного счета'
           type='intermediate'
           color='accent'
-          :value='minimalDiscount'
+          :value='minimalDiscount * (quantity || 1)'
         />
       </div>
       <div v-if='isGift' class="cart-item__prices">
