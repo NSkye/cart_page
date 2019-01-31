@@ -55,6 +55,11 @@
 </template>
 
 <script>
+/**
+ * Основной компонент-провайдер. Связывает со стором все контроллируемые компоненты.
+ * Наряду с ним такую же функцию выполняет Header для своих контроллируемых компонентов.
+ */
+
 import SectionHeading from '@@/SectionHeading'
 import CartItem from '@@/CartItem'
 import CartItemsSummary from '@@/CartItemsSummary'

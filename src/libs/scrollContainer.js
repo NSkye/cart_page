@@ -5,6 +5,12 @@ const easeInOutQuad = (t, b, c, d) => {
   return -c / 2 * (t * (t - 2) - 1) + b
 }
 
+/**
+ * Плавно скроллит элемент до нужного места
+ * @param {HTMLElement} element элемент
+ * @param {number} to координата
+ * @param {duration} за сколько времени нужно проскроллить
+ */
 export default (element, to, duration) => {
   let start = element.scrollLeft
   let delta = to - start

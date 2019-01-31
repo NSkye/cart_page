@@ -44,6 +44,9 @@ export default {
     cursorScroll(container)
   },
   methods: {
+    /**
+     * Рассчитывает следующую позицию и скролит до неё при нажатии кнопки вперед
+     */
     handleForward () {
       const container = this.$refs.container
 
@@ -53,6 +56,9 @@ export default {
       }
       scroll(container, this.position, 247)
     },
+    /**
+     * Рассчитывает следующую позицию и скролит до неё при нажатии кнопки назад
+     */
     handleBackward () {
       const container = this.$refs.container
 

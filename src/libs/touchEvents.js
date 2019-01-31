@@ -1,3 +1,8 @@
+/**
+ * Добавляет элементу возможность скроллиться по тач-жесту
+ * @param {HTMLElement} area место в котором должны происходить жесты
+ * @param {HTMLElement} target элемент который будет скроллиться
+ */
 export default function touchScroll (area, target) {
   let tmpX, tmpY, widthY
 

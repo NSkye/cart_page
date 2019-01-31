@@ -1,3 +1,7 @@
+/**
+ * Добавляет на указанный элемент горизонтальный скролл с помощью жеста мышкой
+ * @param {HTMLElement} container
+ */
 export default function cursorScroll (container) {
   let isDown = false
   let tempX

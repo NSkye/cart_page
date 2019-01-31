@@ -1,3 +1,7 @@
+/**
+ * Приводит число к читаемому виду: 1000000 -> 1 000 000
+ * @param {number} value
+ */
 export default function formatNumber (value = 0) {
   let sign = ''
   if (value < 0) {

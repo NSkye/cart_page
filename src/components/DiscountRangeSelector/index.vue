@@ -37,6 +37,10 @@ export default {
     max: { type: Number, default: 0 }
   },
   computed: {
+    /**
+     * Посчитать насколько процентов выставлен слайдер.
+     * Нужно для того чтобы закрашивать только активную его часть.
+     */
     percentage: function () {
       return this.value / this.max * 100
     },
@@ -48,16 +52,27 @@ export default {
     }
   },
   methods: {
+    /**
+     * При передвижаении слайдера эмитит событие, чтобы его мог поднять умный компонент.
+     */
     handleInput (input) {
       this.value = input.target.value
       this.$emit('update', this.value)
     }
   },
+  /**
+   * При маунтинге отправляет сигнал об апдейте.
+   * Нужно для синхронизации слайдера и vuex-состояния.
+   */
   mounted () {
     this.$refs.slider.value = this.max
     this.value = this.max
     this.$emit('update', this.value)
   },
+  /**
+   * Позволяет сохранить значение слайдера при изменении максимального значения
+   * А так же производит дополнительную синхронизацию со стором
+   */
   updated () {
     const oldValue = this.value <= this.max
       ? this.value
