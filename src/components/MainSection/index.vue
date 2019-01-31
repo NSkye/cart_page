@@ -23,22 +23,32 @@
         :is-gift='item.isGift'
       />
     </ul>
+    <CartItemsSummary
+      :items-count='getItemsCount'
+      :total-cost='getItemsPriceCount'
+      :discount='getActualDiscount'
+    />
   </main>
 </template>
 
 <script>
 import SectionHeading from '@@/SectionHeading'
 import CartItem from '@@/CartItem'
+import CartItemsSummary from '@@/CartItemsSummary'
 import { mapGetters } from 'vuex'
 
 export default {
   components: {
     SectionHeading,
-    CartItem
+    CartItem,
+    CartItemsSummary
   },
   computed: {
     ...mapGetters([
-      'getItems'
+      'getItems',
+      'getItemsCount',
+      'getItemsPriceCount',
+      'getActualDiscount'
     ])
   },
   methods: {
