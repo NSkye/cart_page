@@ -73,8 +73,9 @@
 .cart-item
   padding 3em 0
   border-top 1px solid $line-lighter
-  border-bottom 1px solid $line-lighter
   width 100%
+  &:last-child
+    border-bottom 1px solid $line-lighter
   &__heading
     display flex
     justify-content space-between
