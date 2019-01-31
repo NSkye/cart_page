@@ -17,6 +17,10 @@ export default {
     color: {
       type: String,
       default: 'regular'
+    },
+    isFree: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {

@@ -3,8 +3,8 @@
     <span v-if='title' class='price-display__title' v-bind:class='{ [type]: true, [color]: true }'>
       {{ title }}
     </span>
-    <strong class='price-display__value' v-bind:class='{ [type]: true, [color]: true }'>
-      {{ formattedValue }} <span role='img' aria-label='рубль'>₽</span>
+    <strong class='price-display__value' v-bind:class='{ [type]: true, [color]: true, "is-free": isFree }'>
+      {{ !isFree ? formattedValue : 'Бесплатно' }} <span v-show='!isFree' role='img' aria-label='рубль'>₽</span>
     </strong>
   </span>
 </template>
@@ -48,6 +48,10 @@
       font-size 2.2rem
       margin-left auto
       line-height 3rem
+      &.is-free
+        font-size 2rem
+        color $line-accent
+        align-self flex-end
     &.gold
       color $line-special-2
     &.accent

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import { storiesOf } from '@storybook/vue'
 import PriceDisplay from '@@/PriceDisplay'
-import { withKnobs, text, select, number } from '@storybook/addon-knobs'
+import { withKnobs, text, select, number, boolean } from '@storybook/addon-knobs'
 
 Vue.component('pice-display', PriceDisplay)
 
@@ -38,6 +38,10 @@ stories
           accent: 'accent',
           gold: 'gold'
         }, 'regular')
+      },
+      isFree: {
+        type: Boolean,
+        default: boolean('isFree', false)
       }
     },
     template: `
@@ -47,6 +51,7 @@ stories
           :value="value" 
           :type="type" 
           :color="color"
+          :is-free="isFree"
         />
       </div>
     `
