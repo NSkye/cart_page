@@ -1,6 +1,9 @@
 # Cart Page
 Test case for FROGOGO company
 
+[Задеплоенная версия](https://dist-khzyefoxno.now.sh/)  
+[Документация к компонентам](https://out-wmossbyvsb.now.sh/)  
+
 Установка
 ```
 npm i
@@ -10,7 +13,10 @@ npm i
 ```
 npm start
 ```
-
+Сборка продакшн-версии
+```
+npm run build
+```
 Просмотреть документацию к контроллируемым компонентам в сторибуке
 ```
 npm run storybook
