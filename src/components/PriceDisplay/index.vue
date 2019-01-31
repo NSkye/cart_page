@@ -28,6 +28,7 @@
     color $line-light
     margin-right 1rem
     line-height 2.7rem
+    text-align right
     &.total
       font-size 1.7rem
       margin-right 0
