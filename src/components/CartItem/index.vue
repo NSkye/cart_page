@@ -58,8 +58,8 @@
           :value='minimalDiscount'
         />
       </div>
-      <div v-if='isGift' class="cart-item__prices">
-        Подарок
+      <div v-if='isGift' class="cart-item__prices cart-item__prices--gold">
+        <span>Подарок от <span class='gold'><i class='icon-crown' /> GOLD статуса</span></span>
       </div>
     </div>
   </li>
@@ -122,6 +122,13 @@
     flex-direction column
     justify-content center
     align-items flex-end
+    &--gold
+      font-size 1.7em
+      flex-grow 1
+      font-weight 600
   &__full-price, &__avaliable-discount, &__minimal-discount
     margin-top .8em
+
+.gold
+  color $line-special-2
 </style>
