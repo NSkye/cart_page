@@ -50,6 +50,7 @@
       control-title='Посмотреть всё'
       control-type='regular'
     />
+    <RecommendedCarousel />
   </main>
 </template>
 
@@ -59,6 +60,7 @@ import CartItem from '@@/CartItem'
 import CartItemsSummary from '@@/CartItemsSummary'
 import DiscountRangeSelector from '@@/DiscountRangeSelector'
 import AllTotal from '@@/AllTotal'
+import RecommendedCarousel from '@@/RecommendedCarousel'
 import { mapGetters, mapMutations } from 'vuex'
 
 export default {
@@ -67,7 +69,8 @@ export default {
     CartItem,
     CartItemsSummary,
     DiscountRangeSelector,
-    AllTotal
+    AllTotal,
+    RecommendedCarousel
   },
   computed: {
     ...mapGetters([
@@ -99,6 +102,7 @@ export default {
   width 100%
   margin 0 auto
   padding 0 16px
+  padding-bottom 9em
   @media screen and (max-width 782px)
     box-sizing border-box
   &__items
