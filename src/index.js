@@ -3,6 +3,7 @@ import App from '@/App'
 import store from '@/store'
 import 'normalize.css'
 import '@/fonts/open-sans/stylesheet.css'
+import '@/fonts/roboto-numbers-only/stylesheet.css'
 import '@/fonts/icons/stylesheet.css'
 import '@/index.css'
 
