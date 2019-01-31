@@ -28,6 +28,11 @@
       :total-cost='getItemsPriceCount'
       :discount='getActualDiscount'
     />
+    <DiscountRangeSelector
+      class='main-section__range-selector'
+      min=0
+      :max='getMaxDiscount'
+    />
   </main>
 </template>
 
@@ -35,20 +40,24 @@
 import SectionHeading from '@@/SectionHeading'
 import CartItem from '@@/CartItem'
 import CartItemsSummary from '@@/CartItemsSummary'
+import DiscountRangeSelector from '@@/DiscountRangeSelector'
 import { mapGetters } from 'vuex'
 
 export default {
   components: {
     SectionHeading,
     CartItem,
-    CartItemsSummary
+    CartItemsSummary,
+    DiscountRangeSelector
   },
   computed: {
     ...mapGetters([
       'getItems',
       'getItemsCount',
       'getItemsPriceCount',
-      'getActualDiscount'
+      'getActualDiscount',
+      'getMaxDiscount',
+      'getUsedPersonalAccount'
     ])
   },
   methods: {
@@ -73,4 +82,7 @@ export default {
     margin 0
     padding 0
     margin-bottom 6em
+  &__range-selector
+    margin-top 4em
+    margin-bottom 7.7em
 </style>
