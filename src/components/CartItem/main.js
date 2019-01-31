@@ -23,8 +23,8 @@ export default {
     isGift: { type: Boolean, default: false }
   },
   methods: {
-    handleAmountChange (action) {
-      console.log(action)
+    handleAction (action) {
+      this.$emit(action, this.uid)
     }
   }
 }

@@ -1,8 +1,8 @@
 <template>
-  <div class='cart-item' role='li'>
+  <li class='cart-item'>
     <h2 class='cart-item__heading'>
       <a class='cart-item__link' href='#'>{{ title }}</a>
-      <i class='icon-trash cart-item__remove' />
+      <i v-on:click='handleAction("delete")' class='icon-trash cart-item__remove' />
     </h2>
     <div class='cart-item__main'>
       <ImageDisplay
@@ -29,8 +29,8 @@
         <QuantityDisplay
           v-if='quantity && quantityAdjust'
           :value='quantity'
-          @increment='handleAmountChange("increment")'
-          @decrement='handleAmountChange("decrement")'
+          @increment='handleAction("increment")'
+          @decrement='handleAction("decrement")'
         />
       </div>
       <div v-if='!isGift' class="cart-item__prices">
@@ -55,14 +55,14 @@
           title='Минимально к оплате с личного счета'
           type='intermediate'
           color='accent'
-          :value='minimalDiscount * (quantity || 1)'
+          :value='minimalDiscount'
         />
       </div>
       <div v-if='isGift' class="cart-item__prices">
         Подарок
       </div>
     </div>
-  </div>
+  </li>
 </template>
 
 <script src='./main'></script>

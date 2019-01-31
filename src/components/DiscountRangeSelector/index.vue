@@ -48,11 +48,15 @@ export default {
     }
   },
   methods: {
-    handleInput (input) { this.value = input.target.value }
+    handleInput (input) {
+      this.value = input.target.value
+      this.$emit('update', this.value)
+    }
   },
   mounted () {
     this.$refs.slider.value = this.max
     this.value = this.max
+    this.$emit('update', this.value)
   },
   updated () {
     const oldValue = this.value <= this.max
@@ -60,6 +64,7 @@ export default {
       : this.max
 
     this.$refs.slider.value = oldValue
+    this.$emit('update', oldValue)
   }
 }
 </script>

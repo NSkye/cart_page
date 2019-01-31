@@ -4,7 +4,7 @@
       title='Вот что в вашей корзине'
       control-title='Очистить корзину'
       control-type='danger'
-      @clicked='clearCart'
+      @clicked='removeAllItems'
     />
     <ul class='main-section__items'>
       <CartItem
@@ -21,6 +21,9 @@
         :avaliable-discount='item.maxDiscount'
         :minimal-discount='item.minDiscount'
         :is-gift='item.isGift'
+        @increment='incrementItemQuantity'
+        @decrement='decrementItemQuantity'
+        @delete='removeItem'
       />
     </ul>
     <CartItemsSummary
@@ -30,8 +33,22 @@
     />
     <DiscountRangeSelector
       class='main-section__range-selector'
-      min=0
+      :min='0'
       :max='getMaxDiscount'
+      @update='updateUsedDiscount'
+    />
+    <AllTotal
+      class='main-section__all-total'
+      :shipping='getAllTotal.shipping'
+      :total='getAllTotal.total'
+      :bonus-percents='getAllTotal.bonusInPercents'
+      :bonus-money='getAllTotal.bonusInMoney'
+      :cash-back='getAllTotal.cashBack'
+    />
+    <SectionHeading
+      title='Мы также рекомендуем'
+      control-title='Посмотреть всё'
+      control-type='regular'
     />
   </main>
 </template>
@@ -41,14 +58,16 @@ import SectionHeading from '@@/SectionHeading'
 import CartItem from '@@/CartItem'
 import CartItemsSummary from '@@/CartItemsSummary'
 import DiscountRangeSelector from '@@/DiscountRangeSelector'
-import { mapGetters } from 'vuex'
+import AllTotal from '@@/AllTotal'
+import { mapGetters, mapMutations } from 'vuex'
 
 export default {
   components: {
     SectionHeading,
     CartItem,
     CartItemsSummary,
-    DiscountRangeSelector
+    DiscountRangeSelector,
+    AllTotal
   },
   computed: {
     ...mapGetters([
@@ -57,13 +76,18 @@ export default {
       'getItemsPriceCount',
       'getActualDiscount',
       'getMaxDiscount',
-      'getUsedPersonalAccount'
+      'getUsedPersonalAccount',
+      'getAllTotal'
     ])
   },
   methods: {
-    clearCart () {
-      console.log('clearing cart...')
-    }
+    ...mapMutations([
+      'removeItem',
+      'removeAllItems',
+      'incrementItemQuantity',
+      'decrementItemQuantity',
+      'updateUsedDiscount'
+    ])
   }
 }
 </script>
