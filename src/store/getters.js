@@ -26,28 +26,35 @@ function getDiscount (state, maxAmount) {
   return state.cartItems.reduce((ac, cv) => {
     let { quantity, minDiscount, maxDiscount } = cv
 
-    minDiscount = quantity * minDiscount
-    maxDiscount = quantity * maxDiscount
+    while (quantity) {
+      if (maxAmount < minDiscount) {
+        break
+      }
 
-    if (maxAmount < minDiscount) {
-      return ac
+      const amountAfterApplyingDiscount = maxAmount - maxDiscount
+
+      if (amountAfterApplyingDiscount >= 0) {
+        maxAmount -= maxDiscount
+        ac += maxDiscount
+
+        quantity--
+        continue
+      }
+
+      let nextMaxDiscount = maxDiscount + amountAfterApplyingDiscount
+
+      if (nextMaxDiscount < minDiscount) {
+        quantity--
+        continue
+      }
+
+      maxAmount -= nextMaxDiscount
+      ac += nextMaxDiscount
+
+      quantity--
     }
 
-    const amountAfterApplyingDiscount = maxAmount - maxDiscount
-
-    if (amountAfterApplyingDiscount >= 0) {
-      maxAmount -= maxDiscount
-      return ac + maxDiscount
-    }
-
-    let nextMaxDiscount = maxDiscount + amountAfterApplyingDiscount
-
-    if (nextMaxDiscount < minDiscount) {
-      return ac
-    }
-
-    maxAmount -= nextMaxDiscount
-    return ac + nextMaxDiscount
+    return ac
   }, 0)
 }
 
@@ -59,7 +66,7 @@ export function getActualDiscount (state) {
   return getDiscount(state, state.personalAccountUsed)
 }
 
-export function allTotal (state) {
+export function getAllTotal (state) {
   const total = getItemsPriceCount(state) - getActualDiscount(state)
   const shipping = total < state.freeShippingFrom ? state.shippingPrice : 0
 
@@ -74,7 +81,7 @@ export function allTotal (state) {
   }
 
   const goldStatusRate = state.goldStatusBonus / 100 + 1
-  const cashBack = total * goldStatusRate
+  const cashBack = Math.floor(total * goldStatusRate)
 
   return {
     shipping,
