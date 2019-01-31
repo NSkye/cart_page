@@ -55,9 +55,9 @@ export default {
     this.value = this.max
   },
   updated () {
-    const oldValue = this.value <= this.max ?
-      this.value :
-      this.max
+    const oldValue = this.value <= this.max
+      ? this.value
+      : this.max
 
     this.$refs.slider.value = oldValue
   }
@@ -103,7 +103,7 @@ thumb-style()
     background transparent
     background-color $line-border
     background-image linear-gradient($line-accent, $line-accent)
-    background-repeat no-repeat 
+    background-repeat no-repeat
     height .5em
     border-radius .5em
     &:focus
