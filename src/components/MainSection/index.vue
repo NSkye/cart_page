@@ -6,15 +6,40 @@
       control-type='danger'
       @clicked='clearCart'
     />
+    <ul class='main-section__items'>
+      <CartItem
+        v-for='item in getItems'
+        v-bind:key='item.uid'
+        :uid='item.uid'
+        :title='item.name'
+        :images='item.images'
+        :quantity='item.quantity'
+        :quantity-adjust='!item.fixedQuantity'
+        :color='item.color'
+        :size='item.size'
+        :full-price='item.price'
+        :avaliable-discount='item.maxDiscount'
+        :minimal-discount='item.minDiscount'
+        :is-gift='item.isGift'
+      />
+    </ul>
   </main>
 </template>
 
 <script>
 import SectionHeading from '@@/SectionHeading'
+import CartItem from '@@/CartItem'
+import { mapGetters } from 'vuex'
 
 export default {
   components: {
-    SectionHeading
+    SectionHeading,
+    CartItem
+  },
+  computed: {
+    ...mapGetters([
+      'getItems'
+    ])
   },
   methods: {
     clearCart () {
@@ -33,4 +58,9 @@ export default {
   padding 0 16px
   @media screen and (max-width 782px)
     box-sizing border-box
+  &__items
+    list-style none
+    margin 0
+    padding 0
+    margin-bottom 6em
 </style>

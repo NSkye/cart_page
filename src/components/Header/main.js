@@ -5,6 +5,7 @@ import Logo from '@@/Logo'
 import Navigation from '@@/Navigation'
 import Promo from '@@/Promo'
 import RegionDisplay from '@@/RegionDisplay'
+import { mapGetters } from 'vuex'
 
 export default {
   components: { Balance, CartHeader, GoldStatus, Logo, Navigation, Promo, RegionDisplay },
@@ -12,6 +13,13 @@ export default {
     return {
       isSmartphone: false
     }
+  },
+  computed: {
+    ...mapGetters([
+      'getCurrentRegionName',
+      'getCurrentAccount',
+      'getItemsCount'
+    ])
   },
   methods: {
     detectSmartphone () {

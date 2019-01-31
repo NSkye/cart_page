@@ -2,16 +2,16 @@
   <header class='header'>
     <div class='header__contents'>
       <div class='header__secondary-row'>
-        <RegionDisplay class='header__secondary-row-item' :selected-region-name='"Москва"' />
+        <RegionDisplay class='header__secondary-row-item' :selected-region-name='getCurrentRegionName' />
         <Promo class='header__secondary-row-item' />
         <GoldStatus class='header__secondary-row-item' />
-        <Balance v-if='!isSmartphone' class='header__secondary-row-item' :amount='500' />
+        <Balance v-if='!isSmartphone' class='header__secondary-row-item' :amount='getCurrentAccount' />
       </div>
       <div class='header__main-row'>
         <Logo class='header__main-row-item' />
         <Navigation class='header__main-row-item' />
-        <Balance v-if='isSmartphone' class='header__main-row-item' :amount='500'/>
-        <CartHeader class='header__main-row-item' :item-count='1' />
+        <Balance v-if='isSmartphone' class='header__main-row-item' :amount='getCurrentAccount'/>
+        <CartHeader class='header__main-row-item' :item-count='getItemsCount' />
       </div>
     </div>
   </header>
