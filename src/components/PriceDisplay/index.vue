@@ -17,6 +17,8 @@
 .price-display
   display flex
   align-items flex-end
+  flex-wrap wrap
+  justify-content flex-end
   &.total
     width 100%
     justify-content space-between
@@ -40,6 +42,7 @@
     font-weight bold
     color $line-core
     line-height 2.7rem
+    white-space nowrap
     &.total
       font-size 2.2rem
       margin-left auto
